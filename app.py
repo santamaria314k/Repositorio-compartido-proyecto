@@ -1,10 +1,12 @@
 #Importacionde dependencias
-
+from flask import session
 from flask import Flask
 from flask import render_template, request, redirect, Response, url_for, session
 from flask_mysqldb import MySQL,MySQLdb 
 
+
 app = Flask(__name__,template_folder='template')
+app.debug = True
 
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
@@ -14,6 +16,9 @@ app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 
 mysql = MySQL(app)
 
+
+
+#LOGIN  CON LOS ROLES DE USUARIO
 @app.route('/acceso-login')
 def home():
     return render_template('login.html')   
@@ -21,6 +26,11 @@ def home():
 @app.route('/admin')
 def admin():
     return render_template('admin.html')   
+
+
+@app.route('/valoracion')
+def valoracion():
+    return render_template('registro_valoracion.html')  
 
 @app.route('/acceso-login', methods= ["GET", "POST"])
 def login():
@@ -36,7 +46,7 @@ def login():
       
         if account:
             session['logueado'] = True
-            session['id'] = account['id']
+            session['Id_user'] = account['Id_user']
             session['id_rol'] = account['id_rol']
             
             if session['id_rol']==1:
@@ -45,17 +55,17 @@ def login():
                 return render_template("user.html")
         else:
             return render_template('login.html',mensaje="Hola su usuario o contraseña son incorrectas ")
+        
+        #metodo para el sierre de session
+@app.route('/logout')
+def logout():
+    session.clear()
+    return redirect('/acceso-login')
 
     
 if __name__ == '__main__':
    app.secret_key = "pinchellave"
    app.run(debug=True, host='0.0.0.0', port=5000, threaded=True)
-
-
-
-
-
-
 
 
 

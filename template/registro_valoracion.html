@@ -8,11 +8,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de la valoracion de un vehiculo</title>
 
-    <link rel="stylesheet" href="../CSS/REGISTRO_VALORACION.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/REGISTRO_VALORACION.css') }}">
+
 </head>
 <body>
     <header>
-        <img src="../IMG/logo.jpeg" >
+        <a href="{{ url_for('logout') }}"><button class="cerrar" >Cerrar Session</button></a>
+
+
 <h1>Registro de Valoracion</h1>
 
     </header>
@@ -26,7 +29,9 @@
     <button href="">Registrar</button>
 </form>
 
-
+<footer>
+    <h1>Mechanical Tecnology</h1>
+</footer>
 
 </body>
 </html>

@@ -1,0 +1,29 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador</title>
+
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/ADMIN.css')}}">
+</head>
+<body>
+    <header>
+        <h1>Menu Administrador</h1>
+        <a href="{{ url_for('logout') }}"><button class="cerrar" >Cerrar Session</button></a>
+    </header>
+
+
+   <a href="{{ url_for('valoracion') }}"> <button class="butvaloracion">Registrar valoracion</button></a>
+
+
+
+<footer>
+    <h1>Mechanical Tecnology</h1>
+</footer>
+
+
+</body>
+</html>

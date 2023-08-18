@@ -22,7 +22,7 @@ header {
 
 form{
     position: relative;
-    top:350px ;
+    top:250px ;
      max-width: 1100px;
      margin: 20px auto;
      padding: 20px;
@@ -53,6 +53,27 @@ button{
     margin-left: 760px;
 }
 
-img{
-    width: 90px;position: relative;left: 40%;
+
+
+.cerrar{
+  position: relative;
+  height:44px ;
+  width:166px ;
+  background-color: black;
+  color: azure;
+  left:9%;
+  border: 2px solid rgb(132, 226, 226);
+  border-radius: 6px;
+}
+
+
+footer {
+  position: relative;
+  background-color: black;
+  color: azure;
+  flex-shrink: 0;
+  padding: 50px;
+  text-align: right;
+  top: 500px;
+  
 }

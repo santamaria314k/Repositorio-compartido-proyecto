@@ -1,0 +1,40 @@
+header {
+
+    background-color: #15297c;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.butvaloracion {
+    background-color: black;
+    color: azure;
+    height: 44px;
+    width: 166px;
+    border: 2px solid azure;
+    border-radius: 6px;
+
+}
+
+
+.cerrar {
+    position: relative;
+    height: 44px;
+    width: 166px;
+    background-color: black;
+    color: azure;
+    left: 36%;
+    border: 2px solid rgb(132, 226, 226);
+    border-radius: 6px;
+}
+
+footer {
+    position: relative;
+    background-color: black;
+    color: azure;
+    flex-shrink: 0;
+    padding: 50px;
+    text-align: right;
+    top: 600px;
+    
+}

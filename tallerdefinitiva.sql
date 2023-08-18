@@ -39,7 +39,7 @@ CREATE TABLE `usuarios` (
 CREATE TABLE `Roles` (
 	`id_rol` INT NOT NULL AUTO_INCREMENT,
 	`nombre` VARCHAR(20) NOT NULL,
-	`estado` VARCHAR(15) NOT NULL,
+	`estado` boolean NOT NULL,
 	PRIMARY KEY (`id_rol`)
 );
 
@@ -115,20 +115,49 @@ ALTER TABLE `Garantias` ADD CONSTRAINT `Garantias_fk1` FOREIGN KEY (`id_tiga`) R
 #-----------------------------------------------------------------------------------------------------------------------------------
 
 
+INSERT INTO Roles (nombre, estado)
+VALUES('adminitrador','1')  ,
+   ('usuario','0') ;
+
+select* from usuarios;
+
+INSERT INTO usuarios (nombre, apellido, telefono, telefono2, email, direccion, genero, user, password, id_rol)
+VALUES('kevin','sanabria','3005745157','5454517875','kevinsantamaria625@gmail.com','cll78c#87-90','Masculino','kevin','1234','1')  ,
+    ('Javier', 'García', '3012345678', '3123456789', 'javier.garcia@email.com', 'Calle 123 #45-67', 'Masculino', 'javierg', 'secreto123', '2'),
+    ('María', 'López', '3011111111', '3122222222', 'maria.lopez@email.com', 'Avenida 456 #78-90', 'Femenino', 'marial', 'contraseña456', '2'),
+    ('Carlos', 'Martínez', '3023456789', '3145678901', 'carlos.martinez@email.com', 'Carrera 789 #12-34', 'Masculino', 'carlosm', 'clave789', '2'),
+    ('Ana', 'Ramírez', '3012345678', '3123456789', 'ana.ramirez@email.com', 'Avenida 567 #89-01', 'Femenino', 'anar', 'secreta123', '2'),
+    ('Alejandro', 'Gómez', '3012345678', '3123456789', 'alejandro.gomez@email.com', 'Calle 890 #23-45', 'Masculino', 'alejandrog', 'password123', '1'),
+    ('Marta', 'Hernández', '3023456789', '3145678901', 'marta.hernandez@email.com', 'Carrera 901 #56-78', 'Femenino', 'martah', 'contraseña456', '1'),
+    ('Daniel', 'Pérez', '3012345678', '3123456789', 'daniel.perez@email.com', 'Avenida 123 #67-89', 'Masculino', 'danielp', 'secreto123', '1'),
+    ('Laura', 'Díaz', '3011111111', '3122222222', 'laura.diaz@email.com', 'Calle 234 #90-12', 'Femenino', 'laurad', 'clave789', '1'),
+    ('José', 'López', '3023456789', '3145678901', 'jose.lopez@email.com', 'Carrera 345 #01-23', 'Masculino', 'josel', 'secreta123', '1'),
+    ('Carolina', 'García', '3012345678', '3123456789', 'carolina.garcia@email.com', 'Avenida 456 #34-56', 'Femenino', 'carolinag', 'password123', '1'),
+    ('Andrés', 'Martínez', '3012345678', '3123456789', 'andres.martinez@email.com', 'Calle 567 #56-78', 'Masculino', 'andresm', 'contraseña456', '1'),
+    ('María', 'Rodríguez', '3023456789', '3145678901', 'maria.rodriguez@email.com', 'Carrera 678 #78-90', 'Femenino', 'mariar', 'secreto123', '2');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 # ->   PROCEDIMIENTOS ALMACENADOS DE LA TABLA VEHICULOS (ARREGLAR)
 
 
 	-- insercion de datos a la tabla vehiculo --
-    id_veh
-	placa
-	lugarExpediplaca
-	marca
-	año
-	modelo  
-	id_user	
-	id_val	
+   
     
     
 INSERT INTO Vehiculos (id_veh, placa, lugarExpediplaca, marca, año, modelo, id_user, id_val)
