@@ -27,7 +27,7 @@ CREATE TABLE `usuarios` (
 	`apellido` VARCHAR(25) NOT NULL,
 	`telefono` INT(11) NOT NULL,
 	`telefono2` INT(11) NOT NULL,
-	`email` INT(40) NOT NULL,
+	`email` varchar (30) NOT NULL,
 	`direccion` VARCHAR(30) NOT NULL,
 	`genero` VARCHAR(15) NOT NULL,
     `user` VARCHAR (30)NOT NULL,

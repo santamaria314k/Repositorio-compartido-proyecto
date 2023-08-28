@@ -1,38 +1,24 @@
-#Importacionde dependencias
+from app import *
 from flask import session
 from flask import Flask
 from flask import render_template, request, redirect, Response, url_for, session
-from flask_mysqldb import MySQL,MySQLdb 
-
-
-app = Flask(__name__,template_folder='template')
-app.debug = True
-
-app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = ''
-app.config['MYSQL_DB'] = 'mechanics'
-app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
-
-mysql = MySQL(app)
-
-
+from . import login
 
 #LOGIN  CON LOS ROLES DE USUARIO
-@app.route('/acceso-login')
+@login.route('/acceso-login')
 def home():
     return render_template('login.html')   
 
-@app.route('/admin')
+@login.route('/admin')
 def admin():
     return render_template('admin.html')   
 
 
-@app.route('/valoracion')
+@login.route('/valoracion')
 def valoracion():
     return render_template('registro_valoracion.html')  
 
-@app.route('/acceso-login', methods= ["GET", "POST"])
+@login.route('/acceso-login', methods= ["GET", "POST"])
 def login():
    
     if request.method == 'POST' and 'user' in request.form and 'password' in request.form:
@@ -61,12 +47,3 @@ def login():
 def logout():
     session.clear()
     return redirect('/acceso-login')
-
-    
-if __name__ == '__main__':
-   app.secret_key = "pinchellave"
-   app.run(debug=True, host='0.0.0.0', port=5000, threaded=True)
-
-
-
-
