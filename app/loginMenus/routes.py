@@ -5,6 +5,8 @@ from flask import render_template, request, redirect, Response, url_for, session
 from . import login
 
 #LOGIN  CON LOS ROLES DE USUARIO
+
+
 @login.route('/acceso-login')
 def home():
     return render_template('login.html')   
@@ -41,8 +43,9 @@ def login():
                 return render_template("user.html")
         else:
             return render_template('login.html',mensaje="Hola su usuario o contraseña son incorrectas ")
-        
-        #metodo para el sierre de session
+  
+  #metodo para el sierre de session
+       
 @app.route('/logout')
 def logout():
     session.clear()

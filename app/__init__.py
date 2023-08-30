@@ -1,8 +1,10 @@
-from .config import Config
+from app.config import Config
 from flask import Flask 
 from flask_sqlalchemy import SQLAlchemy
 #from flask_migrate import Migrate
 from flask_mysqldb import MySQL,MySQLdb 
+
+from flask import session,redirect
 
 
             #OBJETOS  DE LA APLICASION 
@@ -40,3 +42,7 @@ mysql = MySQL(app)
 from app.loginMenus import login
 
 app.register_blueprint(login)
+
+
+
+ #metodo para el sierre de session

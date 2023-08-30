@@ -25,8 +25,8 @@ CREATE TABLE `usuarios` (
 	`Id_user` INT NOT NULL AUTO_INCREMENT,
 	`nombre` VARCHAR(25) NOT NULL,
 	`apellido` VARCHAR(25) NOT NULL,
-	`telefono` INT(11) NOT NULL,
-	`telefono2` INT(11) NOT NULL,
+	`telefono` varchar(20) NOT NULL,
+	`telefono2` varchar(20) NOT NULL,
 	`email` varchar (30) NOT NULL,
 	`direccion` VARCHAR(30) NOT NULL,
 	`genero` VARCHAR(15) NOT NULL,
@@ -122,7 +122,7 @@ VALUES('adminitrador','1')  ,
 select* from usuarios;
 
 INSERT INTO usuarios (nombre, apellido, telefono, telefono2, email, direccion, genero, user, password, id_rol)
-VALUES('kevin','sanabria','3005745157','5454517875','kevinsantamaria625@gmail.com','cll78c#87-90','Masculino','kevin','1234','1')  ,
+VALUES('kevin','sanabria','30057457','54545175','kevinsantamaria625@gmail.com','cll78c#87-90','Masculino','kevin','1234','1')  ,
     ('Javier', 'García', '3012345678', '3123456789', 'javier.garcia@email.com', 'Calle 123 #45-67', 'Masculino', 'javierg', 'secreto123', '2'),
     ('María', 'López', '3011111111', '3122222222', 'maria.lopez@email.com', 'Avenida 456 #78-90', 'Femenino', 'marial', 'contraseña456', '2'),
     ('Carlos', 'Martínez', '3023456789', '3145678901', 'carlos.martinez@email.com', 'Carrera 789 #12-34', 'Masculino', 'carlosm', 'clave789', '2'),
