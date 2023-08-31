@@ -1,5 +1,4 @@
 #Importacionde dependencias
-
 from app import app
 
 

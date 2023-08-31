@@ -1,11 +1,9 @@
 from app.config import Config
 from flask import Flask 
 from flask_sqlalchemy import SQLAlchemy
-#from flask_migrate import Migrate
+from flask_migrate import Migrate
 from flask_mysqldb import MySQL,MySQLdb 
-
-from flask import session,redirect
-
+from flask_bootstrap import Bootstrap
 
             #OBJETOS  DE LA APLICASION 
 
@@ -25,24 +23,34 @@ db = SQLAlchemy(app)
 mysql = MySQL(app)
 
 #configurar MIGRACIONES con app (objeto)
-#migrate = Migrate(app , db)
+migrate = Migrate(app , db)
 
 
 
 #configurar BOOTSTRAP con app (objeto)
-#bootstrap = Bootstrap(app)
+bootstrap = Bootstrap(app)
 
 
 
 #Traer los modelos
+from .models import Valoracion
+
+app.Valoracion = Valoracion
+
 
 #from .models import NOMBRE DE LOS MODELOS QUE SE IMPORTAN
 
 #registrar los  modulos
 from app.loginMenus import login
+from app.registroValoracion import valoracion
 
 app.register_blueprint(login)
+app.register_blueprint(valoracion)
 
 
 
- #metodo para el sierre de session
+
+
+
+
+  

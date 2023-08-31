@@ -1,8 +1,17 @@
 from app import *
 from flask import session
 from flask import Flask
-from flask import render_template, request, redirect, Response, url_for, session
+from flask import render_template, request, redirect,session
 from . import login
+
+
+
+#Funcion que cierra la session 
+@login.route('/logout')
+def logout():
+    session.clear()
+    return redirect('acceso-login')
+
 
 #LOGIN  CON LOS ROLES DE USUARIO
 
@@ -16,9 +25,7 @@ def admin():
     return render_template('admin.html')   
 
 
-@login.route('/valoracion')
-def valoracion():
-    return render_template('registro_valoracion.html')  
+ 
 
 @login.route('/acceso-login', methods= ["GET", "POST"])
 def login():
@@ -44,9 +51,7 @@ def login():
         else:
             return render_template('login.html',mensaje="Hola su usuario o contraseña son incorrectas ")
   
-  #metodo para el sierre de session
-       
-@app.route('/logout')
-def logout():
-    session.clear()
-    return redirect('/acceso-login')
+  
+  
+  
+  

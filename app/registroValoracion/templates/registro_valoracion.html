@@ -1,7 +1,7 @@
+{% import "bootstrap/wtf.html" as wtf  %}
 
+{% block content %}
 
-
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -13,25 +13,28 @@
 </head>
 <body>
     <header>
-        <a href="{{ url_for('logout') }}"><button class="cerrar" >Cerrar Session</button></a>
+       <a href="{{ url_for('loginMenus.logout') }}"><button class="cerrar" >Cerrar Session</button></a> 
 
 
 <h1>Registro de Valoracion</h1>
 
     </header>
 
-<form action="">
+<form method="POST" action="" novalidate enctype="multipart/form-data">
 
 
-    <input type="text"placeholder="Diagnostico del Vehiculo" name="" id="">
+
+    {{wtf.quick_form(form)}}
 
 
-    <button href="">Registrar</button>
 </form>
 
+
 <footer>
-    <h1>Mechanical Tecnology</h1>
+    <h1>Mecanica-Master</h1>
 </footer>
 
 </body>
 </html>
+
+{% endblock  %}

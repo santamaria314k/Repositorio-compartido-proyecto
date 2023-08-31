@@ -85,7 +85,7 @@ CREATE TABLE `tiposGarantia` (
 
 CREATE TABLE `Valoracion` (
 	`id_val` INT NOT NULL AUTO_INCREMENT,
-	`diagnostico` VARCHAR(500) NOT NULL,
+	`diagnostico` VARCHAR(3000) NOT NULL,
 	PRIMARY KEY (`id_val`)
 );
 
