@@ -5,6 +5,10 @@ from .forms import Registrarvaloracionform
 from . import valoracion
 
 
+@valoracion.route("/listarvaloracion")
+def listarvaloracion():
+    valoraciones = app.models.Valoracion.query.all()
+    return render_template("listar_valoracion.html", valoraciones=valoraciones)
 
 
 @valoracion.route('/registroval',methods=["GET", "POST"])
@@ -15,7 +19,7 @@ def registroval():
         form.populate_obj(v)
         app.db.session.add(v)
         app.db.session.commit()
-        return "producto registrado" 
+        return "valoracion registrada" 
      
 
     return render_template('registro_valoracion.html', form=form) 

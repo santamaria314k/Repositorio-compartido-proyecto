@@ -30,13 +30,13 @@ def admin():
 @login.route('/acceso-login', methods= ["GET", "POST"])
 def login():
    
-    if request.method == 'POST' and 'user' in request.form and 'password' in request.form:
+    if request.method == 'POST' and 'username' in request.form and 'password' in request.form:
        
-        _user = request.form['user']
+        _username = request.form['username']
         _password = request.form['password']
 
         cur = mysql.connection.cursor()
-        cur.execute('SELECT * FROM usuarios WHERE user = %s AND password = %s', (_user, _password,))
+        cur.execute('SELECT * FROM usuarios WHERE username = %s AND password = %s', (_username, _password,))
         account = cur.fetchone()
       
         if account:
